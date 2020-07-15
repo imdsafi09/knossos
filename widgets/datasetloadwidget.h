@@ -41,6 +41,8 @@
 #include <QTableWidget>
 #include <QVBoxLayout>
 
+#include <boost/optional.hpp>
+
 class FOVSpinBox : public QSpinBox {
 private:
     int cubeEdge;
@@ -112,6 +114,6 @@ signals:
     void datasetChanged();
     void datasetSwitchZoomDefaults();
 public slots:
-    void adaptMemoryConsumption();
+    void adaptMemoryConsumption(boost::optional<Coordinate> cubeShape = boost::none);
     void processButtonClicked();
 };
